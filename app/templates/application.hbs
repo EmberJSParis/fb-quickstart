@@ -1,5 +1,65 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<script src="https://cdn.firebase.com/libs/firebaseui/2.1.1/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.1.1/firebaseui.css" />
 
-{{outlet}}
+
+
+<meta charset="UTF-8">
+    <title>Sample FirebaseUI App</title>
+    <!-- *******************************************************************************************
+       * TODO(DEVELOPER): Paste the initialization snippet from:
+ 
+ 
+ <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script>
+  
+  var config = {
+    apiKey: "AIzaSyBMGt-rw9l1YQ87aEDkbQ590nHllT0uOAg",
+    authDomain: "artadysgouvfr.firebaseapp.com",
+    databaseURL: "https://artadysgouvfr.firebaseio.com",
+    projectId: "artadysgouvfr",
+    storageBucket: "artadysgouvfr.appspot.com",
+    messagingSenderId: "716658089584"
+  };
+  firebase.initializeApp(config);
+</script>
+ 
+
+ 
+ 
+       * Firebase Console > Overview > Add Firebase to your web app. *
+       ***************************************************************************************** -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.1.1/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+
+
+
+
+      var uiConfig = {
+        signInSuccessUrl: 'https://artadysgouvfr.firebaseapp.com/__/auth/handler',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: ''
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
+  <body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    <center><h1>Welcome to ARTADYS Sign Up page</h1></center>
+    <div id="firebaseui-auth-container"></div>
+  </body>

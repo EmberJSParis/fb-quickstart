@@ -6,6 +6,29 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+
+firebase: {
+    apiKey: "AIzaSyBMGt-rw9l1YQ87aEDkbQ590nHllT0uOAg",
+    authDomain: "artadysgouvfr.firebaseapp.com",
+    databaseURL: "https://artadysgouvfr.firebaseio.com",
+    projectId: "artadysgouvfr",
+    storageBucket: "artadysgouvfr.appspot.com",
+    messagingSenderId: "716658089584"
+    },
+
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+
+    torii: {
+      sessionServiceName: 'session'
+    },
+
+
+
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
